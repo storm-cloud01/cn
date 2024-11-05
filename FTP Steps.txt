@@ -1,0 +1,64 @@
+Requirements :- 2 PC, 1 Switch, 1 Router, 1 Server
+
+Steps for FTP :
+
+1. Router--->FastEthernet0/0-->Ip--> 10.10.10.1 --> On
+   Router--->FastEthernet0/1-->Ip--> 192.168.0.1 --> On
+
+2. Both PC ------------->   IP --> 192.168.0.2 and 192.168.0.3
+   Both PC --> Default Gateway --> 192.168.0.1
+
+3. Server --------------->  IP --> 10.10.10.2
+   Server --> Default Gateway --> 10.10.10.1
+
+4. Server --> config --> Display name --> FTP Server
+5. Server --> Services --> On FTP Service
+6. Server --> Services --> FTP --> username and Password -->Add
+
+7. Open PC 1 --> Text editor --> Hello World                  --> Save file with hello.txt name
+                                 Testing File for FTP server
+
+8. Open PC 1 --> Cmd
+i).   ping 10.10.10.2
+ii).  ftp 10.10.10.2
+iii). username :    , password : 
+iv).  put hello.txt
+v).   dir 
+
+9. Open PC 2 --> cmd
+i). ftp 10.10.10.2
+ii). username :     , password : 
+iii). get hello.txt
+
+
+
+
+Steps for HTTP :
+
+10. Server --> Services --> HTTP -->  Make the HTTP and HTTPS "ON"
+
+11. index.html --> edit -------> <html> 
+                                 <h2> We are implementing HTTP </h2> 
+                                 </html>
+
+12. helloworld.html --> edit --> <html> 
+                                 Hello World ! I am Adi 
+                                 <br> <a href = 'index.html'>back </a> 
+                                 </html>
+
+13. copyright.html --> edit --> <html> 
+                                copyright page 
+                                </html>
+
+14. Open PC 1 --> Web browser 
+10.10.10.2
+10.10.10.2/helloworld.txt
+10.10.10.2/image.html
+10.10.10.2/copyrights.html
+
+15. Same for PC 2
+
+
+
+
+
